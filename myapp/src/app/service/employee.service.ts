@@ -6,7 +6,7 @@ import { HttpClient } from "@angular/common/http";
 })
 export class EmployeeService {
 
-  constructor(private httpClient:HttpClient) { }
+  constructor(private httpClient: HttpClient) { }
 
   getData() {
     return this.httpClient.get("http://localhost:5000/api/employees");
