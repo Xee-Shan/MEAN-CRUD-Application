@@ -11,6 +11,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 
 import { HttpClientModule } from "@angular/common/http";
 import { AddEmployeeComponent } from './components/employee/add-employee/add-employee.component';
+import { EditEmployeeComponent } from './edit-employee/edit-employee.component';
 
 const appRoutes: Routes = [
   {
@@ -18,7 +19,10 @@ const appRoutes: Routes = [
   },
   {
     path : 'add-employee', component : AddEmployeeComponent
-  }
+  },
+  {
+    path : 'edit/:id', component : EditEmployeeComponent
+  },
 ];
 
 @NgModule({
@@ -26,7 +30,8 @@ const appRoutes: Routes = [
     AppComponent,
     EmployeeComponent,
     NavbarComponent,
-    AddEmployeeComponent
+    AddEmployeeComponent,
+    EditEmployeeComponent
   ],
   imports: [
     BrowserModule,

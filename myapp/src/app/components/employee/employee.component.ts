@@ -8,6 +8,7 @@ import { EmployeeService } from "src/app/service/employee.service";
 })
 export class EmployeeComponent implements OnInit {
   employees: any;
+  count: number = 0;
   constructor(private employeeService:EmployeeService) { }
 
   ngOnInit(): void {
@@ -15,8 +16,11 @@ export class EmployeeComponent implements OnInit {
   }
   getEmployeesData() {
     this.employeeService.getData().subscribe(res => {
-      console.log(res);
       this.employees = res;
     }); 
+  }
+  deleteData(id) {
+    this.employeeService.deleteData(id).subscribe();
+    this.getEmployeesData();
   }
 }
